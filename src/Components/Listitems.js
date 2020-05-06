@@ -37,7 +37,7 @@ class Listitems extends React.Component {
                 }
                 {this.props.page === "bookmarked-videos" &&
                     (<div>
-                        <div onClick={() => { this.props.getPlayingVideoId(video.id.videoId, index) }}>
+                        <div onClick={() => { this.props.getPlayingVideoId(video) }}>
                             <img src={video.snippet.thumbnails.default.url} alt="" width="250px" height="150px" />
                         </div>
                         <div>

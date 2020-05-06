@@ -16,6 +16,6 @@ class Videoplayer extends React.Component{
 
 
 const mapStateToProps = (state)=>{
-    return state 
+    return {playingVideoId:state.video.playingVideoId}
 }
 export default connect(mapStateToProps) (Videoplayer)

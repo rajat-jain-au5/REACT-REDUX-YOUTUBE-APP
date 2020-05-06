@@ -1,6 +1,6 @@
 
 let videoState = {
-    // searchTerm:"",
+    searchTerm:"",
     videos: [],
     playingVideoId: "",
     playedVideos: [],
@@ -10,8 +10,8 @@ let videoState = {
 
 
 export function videoReducer(state = videoState, action) {
-    let stateCopy ={...state}
-    console.log(stateCopy)
+    // console.log(state)
+   let stateCopy ={...state}
     switch (action.type) {
         case "search_videos":
             stateCopy.videos = action.payload

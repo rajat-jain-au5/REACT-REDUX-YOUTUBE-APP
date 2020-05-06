@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function getSearchTerm(searchTerm){
     console.log(searchTerm)
-    const API_KEY = "AIzaSyBm4QHi_ipONqb30-d9HB-bnFWK-NV7-BY"
+    const API_KEY = "AIzaSyCXALv7JFxUYU-1rwMUGxysI_v4MY8cyPA"
    
     let request = axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&maxResults=25&part=snippet&key=${API_KEY}`)
 
@@ -13,6 +13,9 @@ function getSearchTerm(searchTerm){
                 type: "search_videos",
                 payload: res.data.items
             })
+        })
+        .catch(err=>{
+            console.log(err)
         })
     }
 }

@@ -13,9 +13,6 @@ class List extends React.Component {
                         this.props.videos.map((val, index) =>
                             (
                                 <Listitems
-                                    // getPlayingVideoId={this.props.getPlayingVideoId}
-                                    // addBookmarked={this.props.addBookmarked}
-
                                     video={val}
                                     index={index}
                                     page={this.props.page}
@@ -26,41 +23,39 @@ class List extends React.Component {
                     {
                         this.props.page === "Played-videos"
                         && this.props.playedVideos &&
-                        this.props.playedVideos.reverse().map((val,index) =>
-                            (   
+                        this.props.playedVideos.reverse().map((val, index) =>
+                            (
                                 <Listitems
-                                    // getPlayingVideoId={this.props.getPlayingVideoId}
-                                    removeFromPlayed={this.props.removeFromPlayed}
                                     video={val}
                                     index={val}
                                     page={this.props.page}
                                 />
                             )
-                        )}
-                         {
+                        )
+                    }
+                    {
                         this.props.page === "bookmarked-videos"
                         && this.props.bookmarkedVideos &&
                         this.props.bookmarkedVideos.reverse().map((val, index) =>
-                            (   
+                            (
                                 <Listitems
-                                    // getPlayingVideoId={this.props.getPlayingVideoId}
-                                    // addBookmarked={this.props.addBookmarked}
-                                    removeFromBookmarked={this.props.removeFromBookmarked}
                                     video={val}
                                     index={val}
                                     page={this.props.page}
                                 />
                             )
-                        )}
+                        )
+                    }
                 </ul>
             </div>
         )
     }
 }
-const mapStateToProps = (state)=> {
+const mapStateToProps = (state) => {
     return {
-    videos:state.video.videos,
-    playedVideos:state.video.playedVideos,
-    bookmarkedVideos:state.video.bookmarkedVideos}
+        videos: state.video.videos,
+        playedVideos: state.video.playedVideos,
+        bookmarkedVideos: state.video.bookmarkedVideos
+    }
 }
-export default connect(mapStateToProps) (List)
+export default connect(mapStateToProps)(List)
